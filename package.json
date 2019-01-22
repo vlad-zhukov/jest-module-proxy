@@ -1,0 +1,65 @@
+{
+  "name": "jest-module-proxy",
+  "version": "1.0.0",
+  "description": "An identity object for mocking imports inside Jest tests.",
+  "author": "Vlad Zhukov (http://github.com/Vlad-Zhukov)",
+  "license": "MIT",
+  "repository": "Vlad-Zhukov/jest-module-proxy",
+  "bugs": {
+    "url": "https://github.com/Vlad-Zhukov/jest-module-proxy/issues"
+  },
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "jest",
+    "prettier": "prettier \"**/*.{js,md}\" --write",
+    "prepublishOnly": "prettier \"**/*.{js,md}\" --check && yarn test"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
+    "babel-jest": "24.0.0-alpha.12",
+    "jest": "24.0.0-alpha.12",
+    "jest-circus": "24.0.0-alpha.12",
+    "prettier": "^1.16.0"
+  },
+  "keywords": [
+    "jest",
+    "mock",
+    "imports",
+    "proxy",
+    "identity",
+    "css"
+  ],
+  "files": [
+    "src"
+  ],
+  "jest": {
+    "testRunner": "jest-circus/runner",
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "\\.css$": "<rootDir>/src/index.js"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 4,
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "jsxBracketSameLine": false,
+    "proseWrap": "always"
+  }
+}
